@@ -2,10 +2,14 @@ package com.backend.taskapp.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Task {
 
     private Long id;
     private String name;
+
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private Date date;
 
     public Task(Long id, String name, Date date) {

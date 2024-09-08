@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,19 +13,20 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="css/style.css">
 </head>
 
 <body>
-    <form method="POST" action="/index">
+    <form method="POST" action="/create" th:object="${task}">
+        <input type="hidden" th:value="${task.id}" name="id" />
         <div class="mb-3">
             <label for="exampleInputEmail" class="form-label">Nome da tarefa</label>
-            <input type="text" class="form-control" name="name">
+            <input type="text" class="form-control" name="name" th:value="${task.name}">
 
         </div>
         <div class="mb-3">
             <label for="exampleInputData" class="form-label">Data de execução</label>
-            <input type="text" class="form-control" name="date">
+            <input type="text" class="form-control" name="date" th:value="${{task.date}}">
 
         </div>
         <div>

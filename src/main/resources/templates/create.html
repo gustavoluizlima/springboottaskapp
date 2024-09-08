@@ -17,6 +17,21 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/create">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="list">Listagem</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <form method="POST" action="/create" th:object="${task}">
         <input type="hidden" th:value="${task.id}" name="id" />
         <div class="mb-3">
